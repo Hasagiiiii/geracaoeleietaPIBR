@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="pib-default">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acampamento PIBR – Inscrições</title>
+  <meta name="description" content="Página oficial de inscrições para o Acampamento da Igreja PIB." />
+  <style>
+    :root {
+      --brand-bg: #0b1220;
+      --brand-card: #121a2b;
+      --brand-grad-a: #17305e;
+      --brand-grad-b: #0e7cc1;
+      --brand-accent: #00e0ff;
+      --brand-accent-2: #ffd166;
+      --brand-text: #e9f2ff;
+      --brand-muted: #9fb1cc;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    html[data-theme="pib-default"] { }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--brand-text);
+      background: radial-gradient(1200px 800px at 15% -10%, rgba(255,255,255,.06), transparent 60%),
+                  radial-gradient(1000px 600px at 85% 110%, rgba(255,255,255,.04), transparent 60%),
+                  var(--brand-bg);
+      line-height: 1.55;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    a { color: var(--brand-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+
+    .hero {
+      position: relative;
+      padding: 72px 0 46px;
+      background: linear-gradient(135deg, var(--brand-grad-a), var(--brand-grad-b));
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center; }
+    .badge { display:inline-block; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.15); color:#fff; font-weight:600; letter-spacing:.4px; }
+    h1 { font-size: clamp(28px, 6vw, 52px); margin: 14px 0 8px; line-height: 1.05; }
+    .subtitle { font-size: clamp(16px, 2.6vw, 20px); color: #f5fbff; opacity:.95 }
+
+    .hero-card {
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      padding: 18px; box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .meta { display:flex; flex-wrap:wrap; gap:12px; margin-top: 12px; }
+    .meta div { background: rgba(255,255,255,.12); padding:8px 12px; border-radius: 12px; font-weight:600 }
+
+    .cta { display:flex; gap:12px; margin-top:18px; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding: 12px 18px; border-radius: 12px; border: 0; cursor:pointer; font-weight:700; letter-spacing:.3px; }
+    .btn-primary { background: var(--brand-accent); color:#0c0f14; }
+    .btn-ghost { background: transparent; color: #fff; border:1px solid rgba(255,255,255,.5) }
+
+    .section { padding: 48px 0; }
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .card {
+      background: linear-gradient(145deg, #121a2b, #1a2236);
+      border:1px solid rgba(255,255,255,.06); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.5); }
+    .card h3 { margin: 6px 0 8px; }
+    .muted { color: var(--brand-muted); font-size: 15px; }
+
+    .form-embed { background: var(--brand-card); border-radius: var(--radius); padding: 10px; box-shadow: var(--shadow); border:1px solid rgba(255,255,255,.06) }
+    .form-embed iframe { width: 100%; min-height: 1400px; border: 0; border-radius: 12px; background:#fff; }
+
+    .faq { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    summary { cursor:pointer; font-weight:700; }
+
+    footer { padding: 28px 0 60px; color: var(--brand-muted); text-align:center }
+
+    @media (max-width: 900px) {
+      .hero .grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .faq { grid-template-columns: 1fr; }
+      .cta { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap grid">
+      <div>
+        <div class="evento-header text-center">
+          <span class="badge">✨ Igreja PIBR • Evento Oficial ✨</span>
+          <h1 class="titulo-evento">Acampamento PIBR <span class="ano">2025</span></h1>
+          <h2 class="subtitulo-evento">Geração Eleita</h2>
+          <p class="descricao-evento">Dias de comunhão, Palavra e muita diversão. Garanta sua vaga agora e convide seus amigos!</p>
+        </div>
+        <div class="hero-card">
+          <div class="meta">
+            <div>📅 24, 25 e 26 Out, 2025</div>
+            <div>📍 Local: Chácara Palmirândia - Travessa Maria Geni David, 57 - Mucuna, CE</div>
+            <div>📝 R$ 120,00 + 1KG de Alimento</div>
+          </div>
+          <div class="cta">
+            <a class="btn btn-primary" href="#inscricao" title="Ir para formulário de inscrição">Fazer inscrição</a>
+          </div>
+          <div id="countdown" class="muted" style="margin-top:10px"></div>
+        </div>
+      </div>
+      <div>
+        <img src="https://i.postimg.cc/kXRnYDkF/Whats-App-Image-2025-08-31-at-00-28-47-1.jpg" alt="Jovens em acampamento ao ar livre" style="width:100%; border-radius: var(--radius); box-shadow: var(--shadow); border:1px solid rgba(255,255,255,.15)"/>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="cards">
+        <div class="card">
+          <h3>WhatsApp:</h3>
+          <p class="muted">(85) 98608-9718</p>
+        </div>
+        <div class="card">
+          <h3>Instagram:</h3>
+          <p class="muted">@geracaoeleitapibr.</p>
+        </div>
+        <div class="card">
+          <h3>Como pagar</h3>
+          <p class="muted">Pix, dinheiro ou cartão. Confirme o pagamento com um dos responsáveis se for em espécie ou cartão.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="faq" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div style="flex:1 1 300px; max-width:600px;">
+          <div style="margin:20px auto; padding:15px; border-radius:10px; background-color:#333; border:1px solid #ffb74d; box-shadow:0 4px 8px rgba(0,0,0,0.5);">
+            <h3 style="font-weight:600; font-size:18px; margin-bottom:10px; color:#ffd54f;">☕🥤 Mais informações</h3>
+            <p style="font-size:15px; line-height:1.6; color:#f5f5f5;">
+              Na planilha, os <strong>21 primeiros inscritos</strong> devem escolher obrigatoriamente:
+              os <strong>6 primeiros</strong> levarão <strong>café</strong> e os próximos <strong>15</strong> levarão <strong>refrigerante</strong>. Após a lista dos 21 se completar, entre em contato com os líderes para saber qual tipo de alimento levar.
+            </p>
+          </div>
+
+          <div style="margin:20px auto; padding:15px; border-radius:10px; background-color:#333; border:1px solid #ffb74d; box-shadow:0 4px 8px rgba(0,0,0,0.5);">
+            <h3 style="font-weight:600; font-size:18px; margin-bottom:10px; color:#ffd54f;">🎒 O que levar?</h3>
+            <p style="font-size:15px; line-height:1.6; color:#f5f5f5;">Bíblia, roupas confortáveis, itens de higiene, protetor solar, remédios pessoais, pratos, talheres e garrafa de água.</p>
+          </div>
+
+          <div style="margin:20px auto; padding:15px; border-radius:10px; background-color:#333; border:1px solid #ffb74d; box-shadow:0 4px 8px rgba(0,0,0,0.5);">
+            <h3 style="font-weight:600; font-size:18px; margin-bottom:10px; color:#ffd54f;">🧑‍👧 Menores de idade</h3>
+            <p style="font-size:15px; line-height:1.6; color:#f5f5f5;">Os líderes entrarão em contato para informar toda programação para os pais ou responsáveis.</p>
+          </div>
+        </div>
+
+        <div style="flex:1 1 300px; max-width:600px;">
+          <div class="card" style="height:100%; padding:15px; border-radius:10px; background-color:#333; box-shadow:0 4px 8px rgba(0,0,0,0.5);">
+            <h3 style="margin-bottom:10px; color:#ffd54f;">📍 Localização</h3>
+            <p style="font-size:15px; color:#f5f5f5; margin-bottom:10px;">Chácara Palmirândia - Travessa Maria Geni David, 57 - Mucuna, CE</p>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31846.197340718103!2d-38.67196459514202!3d-3.858469552129844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c0ad37b3e03267%3A0x336924f0d8c711a5!2zQ2jDoWNhcmEgUGFsbWlyw6JuZGlh!5e0!3m2!1spt-BR!2sbr!4v1756657814350!5m2!1spt-BR!2sbr" 
+              width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <p style="font-size:15px; color:#f5f5f5; margin-top:8px;">Dúvidas? <a href="https://wa.me/5585986089718" target="_blank" rel="noopener" style="color:#ffd54f;">Fale no WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inscricao" style="padding:3rem 1rem; background:#111;">
+      <div style="max-width:900px; margin:0 auto; text-align:center;">
+        <h2 style="font-size:2rem; font-weight:bold; margin-bottom:1rem; color:#fff;">Formulário de Inscrição</h2>
+        <p style="margin-bottom:2rem; color:#ccc;">
+          Preencha o formulário abaixo para garantir sua participação no Acampamento da PIB! Na planilha, escolha o alimento seguindo as regras dos 21 primeiros inscritos.
+        </p>
+
+        <div class="form-embed">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLScsRyQDEYAZZwaHljxR9G4I6_o0lz_XV4AofC6YYTMkanilRQ/viewform?embedded=true" 
+            frameborder="0" marginheight="0" marginwidth="0">
+            Carregando…
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <small>© <span id="year"></span> Igreja PIBR • Ministério de Juventude. Todos os direitos reservados.</small>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const themes = ["pib-default","juventude","kids","natal","pascoa"]; let idx = 0;
+    document.getElementById('toggleTheme').addEventListener('click', () => {
+      idx = (idx + 1) % themes.length;
+      document.documentElement.setAttribute('data-theme', themes[idx]);
+      localStorage.setItem('pib-theme', themes[idx]);
+    });
+    const saved = localStorage.getItem('pib-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    const el = document.getElementById('countdown');
+    const end = new Date('2025-10-10T08:00:00-03:00').getTime();
+    const tick = () => {
+      const now = Date.now();
+      const diff = end - now;
+      if(diff<=0){ el.textContent='O acampamento começou!'; return clearInterval(tmr); }
+      const d=Math.floor(diff/(1000*60*60*24));
+      const h=Math.floor((diff/(1000*60*60))%24);
+      const m=Math.floor((diff/(1000*60))%60);
+      const s=Math.floor((diff/1000)%60);
+      el.textContent=`Faltam ${d}d ${h}h ${m}m ${s}s`;
+    };
+    const tmr=setInterval(tick,1000);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
