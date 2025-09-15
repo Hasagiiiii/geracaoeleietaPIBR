@@ -83,3 +83,363 @@
     a { color: var(--brand-accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+    .muted { color: var(--brand-muted); font-size: 15px; }
+    .section { padding: 48px 0; }
+    h1, h2, h3 { margin-top: 0; }
+
+    /* --- Animação de Scroll --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Cabeçalho (Hero) --- */
+    .hero {
+      position: relative;
+      padding: 72px 0 46px;
+      background: linear-gradient(135deg, var(--brand-grad-a), var(--brand-grad-b));
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: background var(--transition-speed) ease;
+    }
+    .hero .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+    .badge { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, .15); color: #fff; font-weight: 600; letter-spacing: .4px; margin-bottom: 12px; }
+    h1 { font-size: clamp(28px, 6vw, 52px); margin-bottom: 8px; line-height: 1.05; }
+    .hero p { font-size: clamp(16px, 2.6vw, 20px); color: #f5fbff; opacity: .95; margin-top: 0; }
+
+    .hero-card {
+      background: rgba(0, 0, 0, .25);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+      margin-top: 24px;
+    }
+    .meta { display: flex; flex-direction: column; gap: 12px; }
+    .meta-item { display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, .12); padding: 10px 14px; border-radius: 12px; font-weight: 600; }
+    .meta-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .hero-image { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255, 255, 255, .15); object-fit: cover; }
+
+    /* --- Botões (CTA) --- */
+    .cta { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px; border-radius: 12px; border: 0; cursor: pointer; font-weight: 700; letter-spacing: .3px; transition: all 0.2s ease; }
+    .btn svg { width: 18px; height: 18px; }
+    .btn-primary { background: var(--brand-accent); color: #0c0f14; }
+    .btn-primary:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.15); color: #fff; border: 1px solid transparent; }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.25); transform: scale(1.05); }
+
+    /* --- Cards de Informação --- */
+    .info-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      background: linear-gradient(145deg, var(--brand-card), color-mix(in srgb, var(--brand-card) 80%, #fff 20%));
+      border: 1px solid color-mix(in srgb, var(--brand-text) 5%, transparent);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: all var(--transition-speed) ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); }
+    .card h3 { margin-bottom: 8px; }
+    .card-icon { margin-bottom: 12px; }
+    .card-icon svg { width: 32px; height: 32px; color: var(--brand-accent-2); }
+    .btn-copy { margin-top: 12px; padding: 8px 12px; font-size: 14px; background-color: var(--brand-accent-2); color: var(--brand-bg); }
+
+    /* --- Seção de FAQ e Mapa --- */
+    .faq-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; align-items: flex-start; }
+    details {
+        background: var(--brand-card);
+        border: 1px solid color-mix(in srgb, var(--brand-text) 5%, transparent);
+        border-radius: var(--radius);
+        margin-bottom: 1rem;
+        transition: background-color 0.2s ease;
+    }
+    details[open] { background-color: color-mix(in srgb, var(--brand-card) 80%, #000 20%); }
+    summary { cursor: pointer; font-weight: 700; padding: 20px; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; float: right; font-size: 1.5em; line-height: 1; transition: transform 0.3s ease; }
+    details[open] summary::after { transform: rotate(45deg); }
+    .details-content { padding: 0 20px 20px; color: var(--brand-muted); }
+    
+    .map-card { padding: 20px; height: 100%; box-sizing: border-box; }
+    .map-card iframe { width: 100%; height: 350px; border: 0; border-radius: 12px; }
+    .map-card p { margin-top: 16px; }
+
+    /* --- Seção do Formulário de Inscrição --- */
+    .inscricao-section { padding: 48px 16px; background: color-mix(in srgb, var(--brand-bg) 70%, #000 30%); border-radius: var(--radius); }
+    .inscricao-section .container { max-width: 900px; margin: 0 auto; text-align: center; }
+    .inscricao-section h2 { font-size: 2.5rem; font-weight: bold; color: var(--brand-text); }
+    .inscricao-section p { margin-bottom: 2rem; color: var(--brand-muted); }
+    .form-embed { background: var(--brand-card); border-radius: var(--radius); padding: 10px; box-shadow: var(--shadow); border: 1px solid color-mix(in srgb, var(--brand-text) 5%, transparent); }
+    .form-embed iframe { width: 100%; min-height: 1400px; border: 0; border-radius: 12px; background: #fff; }
+
+    /* --- Rodapé --- */
+    footer { padding: 48px 0; color: var(--brand-muted); text-align: center; }
+    .theme-toggle-btn { margin-top: 16px; background-color: var(--brand-card); color: var(--brand-muted); border: 1px solid var(--brand-muted); padding: 8px 16px; }
+
+    /* --- Responsividade --- */
+    @media (max-width: 900px) {
+      .hero .grid { grid-template-columns: 1fr; text-align: center; }
+      .meta { align-items: center; }
+      .cta { justify-content: center; }
+      .info-cards { grid-template-columns: 1fr; }
+      .faq-section { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap grid">
+      <div class="hero-text">
+        <span class="badge">✨ Igreja PIBR • Evento Oficial ✨</span>
+        <h1>Acampamento PIBR 2025</h1>
+        <p>Geração Eleita: dias de comunhão, Palavra e muita diversão. Garanta sua vaga agora e convide seus amigos!</p>
+        
+        <div class="hero-card reveal">
+          <div class="meta">
+            <div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path></svg> <span>24, 25 e 26 de Outubro, 2025</span></div>
+            <div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg> <span>Chácara Palmirândia - Mucuna, CE</span></div>
+            <div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"></path></svg> <span>R$ 120,00 + 1KG de Alimento</span></div>
+          </div>
+          <div class="cta">
+            <a class="btn btn-primary" href="#inscricao" title="Ir para formulário de inscrição">Fazer inscrição</a>
+            <button id="addToCalendarBtn" class="btn btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z"></path></svg>
+              Adicionar ao Calendário
+            </button>
+          </div>
+          <div id="countdown" class="muted" style="margin-top:16px; font-weight:600;"></div>
+        </div>
+      </div>
+      <div>
+        <img src="https://i.postimg.cc/kXRnYDkF/Whats-App-Image-2025-08-31-at-00-28-47-1.jpg" alt="Jovens em acampamento ao ar livre, sorrindo e celebrando juntos." class="hero-image reveal"/>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="info-cards">
+        <div class="card reveal">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M.01 20.99 23.99 12 .01 3.01 0 10l17 2-17 2z"></path></svg></div>
+          <h3>WhatsApp</h3>
+          <p class="muted">(85) 98608-9718</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg></div>
+          <h3>Instagram</h3>
+          <p class="muted">@geracaoeleitapibr</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.22-1.05-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"></path></svg></div>
+          <h3>Como Pagar</h3>
+          <p class="muted">Chave PIX (E-mail):<br><strong>geleita526@gmail.com</strong></p>
+          <button id="copyPixBtn" class="btn btn-copy">Copiar Chave PIX</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="faq-section">
+            <div class="reveal">
+                <details>
+                    <summary>☕🥤 Regras de Alimentos</summary>
+                    <div class="details-content">
+                        <p>Na planilha de inscrição, os inscritos devem escolher:<br>
+        - Os 3 primeiros levarão café.<br>
+        - Os 12 seguintes levarão refrigerante.<br>
+        - Os 5 últimos levarão <strong>uma</strong> bandeja de ovos (20 unidades cada).<br>
+                                Se a lista dos 20 estiver completar, entre em contato com<br> os líderes para saber qual alimento você ira levar.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>🎒 O que levar?</summary>
+                    <div class="details-content">
+                        <p>Bíblia, roupas (incluindo de banho), itens de higiene, toalha, protetor solar, repelente, remédios pessoais, prato, copo, talheres e garrafa de água.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>🧑‍👧 Menores de idade</summary>
+                    <div class="details-content">
+                        <p>É necessária a autorização dos pais ou responsáveis. Os líderes entrarão em contato para alinhar todos os detalhes e fornecer a programação completa.</p>
+                    </div>
+                </details>
+            </div>
+            <div class="card map-card reveal">
+              <h3>📍 Localização</h3>
+              <p class="muted">Chácara Palmirândia - Travessa Maria Geni David, 57 - Mucuna, Forquilha, CE</p>
+              <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.850389794393!2d-38.663726524136315!3d-3.8422760961315223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c0ad37b3e03267%3A0x336924f0d8c711a5!2zQ2jDoWNhcmEgUGFsbWlyw6JuZGlh!5e0!3m2!1spt-BR!2sbr!4v1757906184009!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <p class="muted">Dúvidas? <a href="https://wa.me/5585986089718" target="_blank" rel="noopener">Fale no WhatsApp</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscricao" class="inscricao-section reveal">
+      <div class="container">
+        <h2>Formulário de Inscrição</h2>
+        <p>Preencha o formulário abaixo para garantir sua participação. Não se esqueça de seguir as regras de alimentos ao preencher a planilha!</p>
+        <div class="form-embed">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScsRyQDEYAZZwaHljxR9G4I6_o0lz_XV4AofC6YYTMkanilRQ/viewform?embedded=true"
+            frameborder="0" marginheight="0" marginwidth="0">
+            Carregando…
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <small>© <span id="year"></span> Igreja PIBR • Ministério de Juventude. Todos os direitos reservados.</small>
+      <button id="toggleTheme" class="btn theme-toggle-btn">Mudar Tema</button>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- LÓGICA DE TROCA DE TEMA ---
+      const setupThemeToggler = () => {
+        const toggleButton = document.getElementById('toggleTheme');
+        if (!toggleButton) return;
+
+        const themes = ["pib-default", "juventude", "kids", "natal", "pascoa"];
+        let currentTheme = localStorage.getItem('pib-theme') || themes[0];
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        let currentIndex = themes.indexOf(currentTheme);
+
+        toggleButton.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % themes.length;
+          const newTheme = themes[currentIndex];
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('pib-theme', newTheme);
+        });
+      };
+      
+      // --- LÓGICA DO CONTADOR REGRESSIVO ---
+      const startCountdown = () => {
+        const countdownElement = document.getElementById('countdown');
+        if (!countdownElement) return;
+
+        const eventDate = new Date('2025-10-24T18:00:00-03:00').getTime();
+        let timerInterval;
+
+        const updateTimer = () => {
+          const now = new Date().getTime();
+          const difference = eventDate - now;
+
+          if (difference <= 0) {
+            countdownElement.textContent = 'O acampamento começou!';
+            clearInterval(timerInterval);
+            return;
+          }
+
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+          countdownElement.textContent = `Faltam ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        };
+        
+        timerInterval = setInterval(updateTimer, 1000);
+        updateTimer();
+      };
+
+      // --- LÓGICA "ADICIONAR AO CALENDÁRIO" ---
+      const setupAddToCalendar = () => {
+        const button = document.getElementById('addToCalendarBtn');
+        if(!button) return;
+
+        button.addEventListener('click', () => {
+          const title = encodeURIComponent('Acampamento PIBR 2025 - Geração Eleita');
+          const startDate = '20251024T210000Z'; // 18:00 BRT is 21:00 UTC
+          const endDate = '20251026T210000Z'; // Assuming ends at 18:00 BRT
+          const details = encodeURIComponent('Acampamento da juventude Geração Eleita. Mais informações no site.');
+          const location = encodeURIComponent('Chácara Palmirândia - Travessa Maria Geni David, 57 - Mucuna, Forquilha, CE');
+          
+          const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+          
+          window.open(googleCalendarUrl, '_blank');
+        });
+      };
+
+      // --- LÓGICA "COPIAR CHAVE PIX" --- (VERSÃO CORRIGIDA)
+      const setupCopyPix = () => {
+        const copyBtn = document.getElementById('copyPixBtn');
+        if (!copyBtn) return;
+
+        // 1. CORREÇÃO: A chave PIX foi atualizada para o valor correto.
+        const pixKey = 'geleita526@gmail.com';
+
+        copyBtn.addEventListener('click', () => {
+            // 2. MÉTODO MODERNO: Usando a API 'Clipboard' que é mais segura e confiável.
+            navigator.clipboard.writeText(pixKey).then(() => {
+                // Se a cópia funcionar, muda o texto do botão para dar feedback.
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = 'Copiado!';
+
+                // Volta ao texto original após 2 segundos.
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                // Se der erro, avisa o usuário.
+                console.error('Falha ao copiar a chave PIX: ', err);
+                alert('Não foi possível copiar a chave. Tente manualmente.');
+            });
+        });
+      };
+
+
+      // --- LÓGICA DE ANIMAÇÃO DE SCROLL ---
+      const setupScrollAnimations = () => {
+        const revealElements = document.querySelectorAll('.reveal');
+        if (revealElements.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(elem => {
+          observer.observe(elem);
+        });
+      };
+
+      // --- LÓGICA PARA ATUALIZAR O ANO NO RODAPÉ ---
+      const setCopyrightYear = () => {
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+      };
+      
+      // --- INICIALIZAÇÃO DE TODAS AS FUNÇÕES ---
+      setupThemeToggler();
+      startCountdown();
+      setCopyrightYear();
+      setupAddToCalendar();
+      setupCopyPix();
+      setupScrollAnimations();
+    });
+  </script>
+</body>
+</html>
